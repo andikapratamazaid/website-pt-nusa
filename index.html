@@ -257,13 +257,13 @@ footer{padding:28px 0;border-top:1px solid var(--ln);color:var(--mu);font-size:1
 <div class="eb">Hasil Karya</div><h2>Galeri video sampel</h2>
 <p class="sub">Poster ilustrasi AI untuk tiap format. Sampel video resmi yang lolos QC internal akan tampil di sini.</p>
 <div class="gal">
-<div class="vid" style="--a:#ff7a59;--b:#c2185b"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-ugc.jpg" alt="Kreator AI review skincare" loading="lazy"><b>UGC Ads</b><small>Kreator AI review skincare</small></div>
-<div class="vid" style="--a:#1db7ff;--b:#1f3fff"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-produk.jpg" alt="Product shot kosmetik" loading="lazy"><b>Konten Produk</b><small>Product shot kosmetik</small></div>
+<div class="vid" style="--a:#ff7a59;--b:#c2185b"><i>Ilustrasi</i><span class="pl">▶</span><video class="ph" autoplay muted loop playsinline poster="gal-ugc.jpg"><source src="vid-ugc.mp4" type="video/mp4"></video><b>UGC Ads</b><small>Kreator AI review skincare</small></div>
+<div class="vid" style="--a:#1db7ff;--b:#1f3fff"><i>Ilustrasi</i><span class="pl">▶</span><video class="ph" autoplay muted loop playsinline poster="poster-parfum.jpg"><source src="vid-parfum.mp4" type="video/mp4"></video><b>Konten Produk</b><small>Product shot kosmetik</small></div>
 <div class="vid" style="--a:#2b2f77;--b:#0b0f2e"><i>Ilustrasi</i><span class="pl">▶</span><video class="ph" id="vsin" autoplay muted loop playsinline poster="gal-sinematik.jpg"><source src="movie-action.mp4" type="video/mp4"></video><b>Sinematik</b><small>Brand story ala film pendek</small></div>
-<div class="vid" style="--a:#0f766e;--b:#052e2b"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-company.jpg" alt="Profil perusahaan korporat" loading="lazy"><b>Company Profile</b><small>Profil perusahaan korporat</small></div>
-<div class="vid" style="--a:#f59e0b;--b:#b45309"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-kuliner.jpg" alt="Promo menu dan resto" loading="lazy"><b>Kuliner</b><small>Promo menu dan resto</small></div>
-<div class="vid" style="--a:#a855f7;--b:#5b21b6"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-fashion.jpg" alt="Lookbook dan OOTD produk" loading="lazy"><b>Fashion</b><small>Lookbook dan OOTD produk</small></div>
-<div class="vid" style="--a:#22c55e;--b:#166534"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-gadget.jpg" alt="Unboxing dan fitur utama" loading="lazy"><b>Gadget & Elektronik</b><small>Unboxing dan fitur utama</small></div>
+<div class="vid" style="--a:#0f766e;--b:#052e2b"><i>Ilustrasi</i><span class="pl">▶</span><video class="ph" autoplay muted loop playsinline poster="gal-company.jpg"><source src="vid-company.mp4" type="video/mp4"></video><b>Company Profile</b><small>Profil perusahaan korporat</small></div>
+<div class="vid" style="--a:#f59e0b;--b:#b45309"><i>Ilustrasi</i><span class="pl">▶</span><video class="ph" autoplay muted loop playsinline poster="gal-kuliner.jpg"><source src="vid-kuliner.mp4" type="video/mp4"></video><b>Kuliner</b><small>Promo menu dan resto</small></div>
+<div class="vid" style="--a:#a855f7;--b:#5b21b6"><i>Ilustrasi</i><span class="pl">▶</span><video class="ph" autoplay muted loop playsinline poster="gal-fashion.jpg"><source src="vid-fashion.mp4" type="video/mp4"></video><b>Fashion</b><small>Lookbook dan OOTD produk</small></div>
+<div class="vid" style="--a:#22c55e;--b:#166534"><i>Ilustrasi</i><span class="pl">▶</span><video class="ph" autoplay muted loop playsinline poster="poster-gadget.jpg"><source src="vid-gadget.mp4" type="video/mp4"></video><b>Gadget & Elektronik</b><small>Unboxing dan fitur utama</small></div>
 <div class="vid" style="--a:#64748b;--b:#0f172a"><i>Brand sendiri</i><span class="pl">▶</span><img class="ph" src="gal-brand.jpg" alt="Sampel brand sendiri, diberi label" loading="lazy"><b>Brand Nusa</b><small>Sampel brand sendiri, diberi label</small></div>
 </div>
 <p class="note">Poster di atas adalah ilustrasi AI per format, bukan rekaman klien. Begitu sampel video resmi lolos QC, poster ini diganti videonya, dan sampel brand sendiri selalu diberi label jelas.</p>
@@ -428,6 +428,6 @@ document.querySelectorAll("[data-wl]").forEach(function(l){l.onclick=function(){
 document.querySelectorAll("[data-custom]").forEach(function(l){l.onclick=function(){a[1]=3;}});
 setLang("id");
 </script>
-<script>(function(){var v=document.getElementById("vsin");if(!v)return;var card=v.closest(".vid"),pl=card.querySelector(".pl");card.addEventListener("click",function(){if(v.paused){v.muted=false;v.play();pl.textContent="❚❚"}else{v.pause();pl.textContent="▶"}})})();</script>
+<script>(function(){document.querySelectorAll(".vid").forEach(function(card){var v=card.querySelector("video");if(!v)return;var pl=card.querySelector(".pl");card.addEventListener("click",function(){if(v.paused){if(v.id==="vsin")v.muted=false;v.play();if(pl)pl.textContent="❚❚"}else{v.pause();if(pl)pl.textContent="▶"}})})})();</script>
 </body>
 </html>
