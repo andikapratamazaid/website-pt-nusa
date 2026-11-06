@@ -190,7 +190,7 @@ footer{padding:28px 0;border-top:1px solid var(--ln);color:var(--mu);font-size:1
 
 </style>
 <style>
-.vid img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.vid img.ph,.vid video.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .vid::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,10,24,.78),rgba(4,10,24,0) 48%);z-index:1}
 .vid i,.vid .pl{z-index:3}
 .vid b,.vid small{z-index:2}
@@ -259,7 +259,7 @@ footer{padding:28px 0;border-top:1px solid var(--ln);color:var(--mu);font-size:1
 <div class="gal">
 <div class="vid" style="--a:#ff7a59;--b:#c2185b"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-ugc.jpg" alt="Kreator AI review skincare" loading="lazy"><b>UGC Ads</b><small>Kreator AI review skincare</small></div>
 <div class="vid" style="--a:#1db7ff;--b:#1f3fff"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-produk.jpg" alt="Product shot kosmetik" loading="lazy"><b>Konten Produk</b><small>Product shot kosmetik</small></div>
-<div class="vid" style="--a:#2b2f77;--b:#0b0f2e"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-sinematik.jpg" alt="Brand story ala film pendek" loading="lazy"><b>Sinematik</b><small>Brand story ala film pendek</small></div>
+<div class="vid" style="--a:#2b2f77;--b:#0b0f2e"><i>Ilustrasi</i><span class="pl">▶</span><video class="ph" id="vsin" autoplay muted loop playsinline poster="gal-sinematik.jpg"><source src="movie-action.mp4" type="video/mp4"></video><b>Sinematik</b><small>Brand story ala film pendek</small></div>
 <div class="vid" style="--a:#0f766e;--b:#052e2b"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-company.jpg" alt="Profil perusahaan korporat" loading="lazy"><b>Company Profile</b><small>Profil perusahaan korporat</small></div>
 <div class="vid" style="--a:#f59e0b;--b:#b45309"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-kuliner.jpg" alt="Promo menu dan resto" loading="lazy"><b>Kuliner</b><small>Promo menu dan resto</small></div>
 <div class="vid" style="--a:#a855f7;--b:#5b21b6"><i>Ilustrasi</i><span class="pl">▶</span><img class="ph" src="gal-fashion.jpg" alt="Lookbook dan OOTD produk" loading="lazy"><b>Fashion</b><small>Lookbook dan OOTD produk</small></div>
@@ -428,5 +428,6 @@ document.querySelectorAll("[data-wl]").forEach(function(l){l.onclick=function(){
 document.querySelectorAll("[data-custom]").forEach(function(l){l.onclick=function(){a[1]=3;}});
 setLang("id");
 </script>
+<script>(function(){var v=document.getElementById("vsin");if(!v)return;var card=v.closest(".vid"),pl=card.querySelector(".pl");card.addEventListener("click",function(){if(v.paused){v.muted=false;v.play();pl.textContent="❚❚"}else{v.pause();pl.textContent="▶"}})})();</script>
 </body>
 </html>
